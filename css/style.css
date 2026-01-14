@@ -1,0 +1,354 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+  /*
+   * Aqui comienza el proyecto
+   */
+
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:wght@100;400;600&display=swap');
+body {
+  background-image:  url(../img/black-men.png),  url(../img/sunglasses.png),
+  url(../img/glasses-boy.png), url(../img/glasses-girl.png), url(../img/chinese-girl.png), url(../img/ellipse.png),url(../img/ellipse1.png);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 180px 400px, 180px 400px, 180px 400px, 180px 200px,  200px 200px, 550px 550px, 700px 800px;
+  background-position: 850px 140px , 1240px 240px, 1040px 350px, 850px 550px, 1040px 140px, 1000px 300px;
+  font-family: "Poppins", sans-serif;
+}
+
+header.main-header {
+  justify-content: space-between;
+  padding-right: 110px;
+  padding-top: 30px;
+  padding-left: 110px;
+  display: flex;
+
+} 
+
+nav.main-menu ul {
+  margin: 0px;
+  padding: 0px;
+  width: 5%;
+  display: flex inline;
+  margin-right: 30%;
+  gap: 26px;
+  list-style: none;
+  border-bottom: 5px solid #DB2A6B;
+  white-space: nowrap;
+
+
+  }
+
+nav.main-menu a {
+  color: #ABABAB;
+  text-decoration: none;
+  padding-bottom: 30px;
+  }
+
+.hero__title{
+  font-family: "Merriweather", serif;
+  font-size: 5rem;
+  color: #FFFFFF;
+  padding-left: 110px;
+  padding-top: 70px;
+  line-height: 80px;
+  size: 64px;
+  margin: 0;
+  margin-bottom: 42px;
+  }
+  
+.hero__subtittle{
+  font-size: 20px;
+  color: #909090;
+  padding-left: 110px;
+  margin: 0;
+  margin-bottom: 60px;
+  
+  }
+
+a.hero__button {
+  display: inline-block;
+  background-color: #DB2A6B;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-left: 70px;
+  padding: 15px 40px;
+  border-radius: 15px;
+  border-bottom-left-radius: 0px ;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+}
+
+a.hero__button2 {
+  color: #FFFFFF;
+  margin-left: 50px;
+  text-decoration: underline;
+}
+
+section.categories {
+  display: flex;
+  margin-left: 70px;
+  width: 680px;
+  height: 200px;
+  color: #FFFFFF;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+.category__icon {
+
+width: 60px;
+height: 50px;
+margin-bottom: -10px;
+}
+
+.category__title{
+display: inline-flex;
+align-items:flex-end
+}
