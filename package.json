@@ -1,18 +1,20 @@
 {
-  "name": " ",
-  "version": "0.0.1",
-  "description": "",
+  "name": "proyecto-header-gathsession",
+  "version": "1.0.0",
+  "description": "Landing page header and hero section for GathSession",
   "private": true,
-  "keywords": [
-    ""
-  ],
-  "license": "",
-  "author": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js"
   },
+  "keywords": [
+    "gathsession",
+    "landing-page",
+    "header",
+    "webpack"
+  ],
+  "author": "Yeferson Suescun",
+  "license": "MIT",
   "devDependencies": {
     "copy-webpack-plugin": "^13.0.1",
     "html-webpack-plugin": "^5.6.4",

@@ -1,73 +1,107 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Proyecto Header Gathsession</title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <title>GathSession — Build your best community</title>
+  <meta name="description" content="Meet and communicate with the best people to run projects, events or other activities in a more effective and fun way.">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GathSession — Build your best community">
+  <meta property="og:description" content="Meet and communicate with the best people to run projects, events or other activities in a more effective and fun way.">
+  <meta property="og:image" content="img/content.jpg">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
-
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#2B2D38">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body style="background-color: #2B2D38;">
+<body>
   <header class="main-header">
-         <a href="" class="logo">
-        <img src="img/GathSession..svg" alt="logotipo de beauty">
-      </a>
+    <a href="#" class="logo" aria-label="GathSession Home">
+      <img src="img/GathSession..svg" alt="GathSession" width="232" height="30">
+    </a>
 
-      <nav class="main-menu"> 
-        <ul>    
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">About Us</a></li>
+    <nav class="main-menu" aria-label="Main Navigation">
+      <ul>
+        <li><a href="#" class="nav-link active">Home</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#about" class="nav-link">About Us</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="hero">
-    <h1 class="hero__title">Build your best <br>community <br> starting from here.</h1>
-<p class="hero__subtittle">Meet and communicate with the best people to run <br>
-   projects, events or other activities in a more effective <br> and fun way</p>
-  </section>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__container">
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__title">Build your best <br>community <br>starting from here.</h1>
+          <p class="hero__subtitle">Meet and communicate with the best people to run <br>projects, events or other activities in a more effective <br>and fun way</p>
 
-  <aside class="login">
-    <ul><a href="#" class="hero__button">Get Started</a>
-    <a href="#" class="hero__button2">Learn More</a> <span><img src="img/flecha-Arrow.svg" alt=""></span></ul>
-  </aside>
+          <div class="hero__actions">
+            <a href="#get-started" class="hero__button">Get Started</a>
+            <a href="#learn-more" class="hero__button2">
+              Learn More
+              <img src="img/flecha-Arrow.svg" alt="" aria-hidden="true" class="hero__arrow">
+            </a>
+          </div>
 
-   <section class="categories">
-      <article class="category">
-        <img src="img/said-icon.png" alt="" class="category__icon">
-        <h3 class="category__title">Build<br>Community</h3>
-      </article>
-      <article class="category">
-        <img src="img/calendar-icon.png" alt="" class="category__icon">
-        <h3 class="category__title">Share<br>Events</h3>
-      </article>
-      <article class="category">
-        <img src="img/get-icon.png" alt="" class="category__icon">
-        <h4 class="category__title">Get<br>Information</h4>
-      </article>
-      
-      </section>
+          <div class="categories">
+            <article class="category">
+              <img src="img/said-icon.png" alt="" aria-hidden="true" class="category__icon">
+              <h3 class="category__title">Build<br>Community</h3>
+            </article>
+            <article class="category">
+              <img src="img/calendar-icon.png" alt="" aria-hidden="true" class="category__icon">
+              <h3 class="category__title">Share<br>Events</h3>
+            </article>
+            <article class="category">
+              <img src="img/get-icon.png" alt="" aria-hidden="true" class="category__icon">
+              <h3 class="category__title">Get<br>Information</h3>
+            </article>
+          </div>
+        </div>
 
+        <div class="hero__visual" aria-hidden="true">
+          <img src="img/ellipse1.png" alt="" class="hero__orbit hero__orbit--outer">
+          <img src="img/ellipse.png" alt="" class="hero__orbit hero__orbit--inner">
 
+          <div class="hero__collage">
+            <div class="hero__avatar hero__avatar--black-men">
+              <img src="img/black-men.png" alt="">
+            </div>
+            <div class="hero__avatar hero__avatar--chinese-girl">
+              <img src="img/chinese-girl.png" alt="">
+            </div>
+            <div class="hero__avatar hero__avatar--sunglasses">
+              <img src="img/sunglasses.png" alt="">
+            </div>
+            <div class="hero__avatar hero__avatar--glasses-girl">
+              <img src="img/glasses-girl.png" alt="">
+            </div>
+            <div class="hero__avatar hero__avatar--glasses-boy">
+              <img src="img/glasses-boy.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  
- 
+  <script src="js/app.js"></script>
 </body>
 
 </html>

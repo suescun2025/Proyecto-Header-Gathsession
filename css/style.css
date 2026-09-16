@@ -1,354 +1,437 @@
-/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
 /* ==========================================================================
-   Base styles: opinionated defaults
+   GathSession — Design System & Custom Styles
    ========================================================================== */
+
+:root {
+  --color-bg: #2B2D38;
+  --color-primary: #DB2A6B;
+  --color-text: #FFFFFF;
+  --color-text-muted: #909090;
+  --color-nav: #ABABAB;
+  --font-body: 'Poppins', sans-serif;
+  --font-heading: 'Merriweather', serif;
+}
+
+/* Base resets & box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
-}
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
-}
-
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
-}
-
-.clearfix::after {
-  clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-}
-
-  /*
-   * Aqui comienza el proyecto
-   */
-
-   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
-   @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:wght@100;400;600&display=swap');
 body {
-  background-image:  url(../img/black-men.png),  url(../img/sunglasses.png),
-  url(../img/glasses-boy.png), url(../img/glasses-girl.png), url(../img/chinese-girl.png), url(../img/ellipse.png),url(../img/ellipse1.png);
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: 180px 400px, 180px 400px, 180px 400px, 180px 200px,  200px 200px, 550px 550px, 700px 800px;
-  background-position: 850px 140px , 1240px 240px, 1040px 350px, 850px 550px, 1040px 140px, 1000px 300px;
-  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-header.main-header {
-  justify-content: space-between;
-  padding-right: 110px;
-  padding-top: 30px;
-  padding-left: 110px;
-  display: flex;
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
 
-} 
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-nav.main-menu ul {
-  margin: 0px;
-  padding: 0px;
-  width: 5%;
-  display: flex inline;
-  margin-right: 30%;
-  gap: 26px;
+ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
-  border-bottom: 5px solid #DB2A6B;
-  white-space: nowrap;
-
-
-  }
-
-nav.main-menu a {
-  color: #ABABAB;
-  text-decoration: none;
-  padding-bottom: 30px;
-  }
-
-.hero__title{
-  font-family: "Merriweather", serif;
-  font-size: 5rem;
-  color: #FFFFFF;
-  padding-left: 110px;
-  padding-top: 70px;
-  line-height: 80px;
-  size: 64px;
-  margin: 0;
-  margin-bottom: 42px;
-  }
-  
-.hero__subtittle{
-  font-size: 20px;
-  color: #909090;
-  padding-left: 110px;
-  margin: 0;
-  margin-bottom: 60px;
-  
-  }
-
-a.hero__button {
-  display: inline-block;
-  background-color: #DB2A6B;
-  color: #FFFFFF;
-  text-decoration: none;
-  margin-left: 70px;
-  padding: 15px 40px;
-  border-radius: 15px;
-  border-bottom-left-radius: 0px ;
-  text-align: center;
-  width: 100px;
-  height: 30px;
 }
 
-a.hero__button2 {
-  color: #FFFFFF;
-  margin-left: 50px;
-  text-decoration: underline;
-}
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
 
-section.categories {
+.main-header {
   display: flex;
-  margin-left: 70px;
-  width: 680px;
-  height: 200px;
-  color: #FFFFFF;
-  gap: 80px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 30px 110px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+.main-menu ul {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  color: var(--color-nav);
+  font-size: 1rem;
+  font-weight: 400;
+  padding-bottom: 6px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--color-text);
+}
+
+.nav-link.active {
+  color: var(--color-text);
+  border-bottom: 4px solid var(--color-primary);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero {
+  padding: 30px 110px 60px;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  position: relative;
+}
+
+.hero__content {
+  flex: 1;
+  max-width: 650px;
+  z-index: 2;
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 4.8vw, 5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-text);
+  margin: 0 0 32px 0;
+  letter-spacing: -0.01em;
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0 0 45px 0;
+  max-width: 560px;
+}
+
+/* Hero CTA Buttons */
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin-bottom: 65px;
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 16px 36px;
+  border-radius: 16px;
+  border-bottom-left-radius: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.hero__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(219, 42, 107, 0.4);
+  filter: brightness(1.05);
+}
+
+.hero__button:active {
+  transform: translateY(0);
+}
+
+.hero__button2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hero__button2:hover {
+  opacity: 0.85;
+  transform: translateX(3px);
+}
+
+.hero__arrow {
+  width: 18px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.hero__button2:hover .hero__arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Categories / Feature Badges
+   ========================================================================== */
+
+.categories {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s ease;
+}
+
+.category:hover {
+  transform: translateY(-2px);
 }
 
 .category__icon {
-
-width: 60px;
-height: 50px;
-margin-bottom: -10px;
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-.category__title{
-display: inline-flex;
-align-items:flex-end
+.category__title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-text);
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+/* ==========================================================================
+   Hero Visual / Image Collage
+   ========================================================================== */
+
+.hero__visual {
+  position: relative;
+  width: 580px;
+  height: 600px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* Concentric orbit curves */
+.hero__orbit {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero__orbit--outer {
+  width: 650px;
+  height: auto;
+  top: -40px;
+  right: -50px;
+  opacity: 0.6;
+}
+
+.hero__orbit--inner {
+  width: 500px;
+  height: auto;
+  top: 120px;
+  right: -20px;
+  opacity: 0.6;
+}
+
+.hero__collage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.hero__avatar {
+  position: absolute;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hero__avatar:hover {
+  transform: translateY(-4px) scale(1.02);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.3));
+}
+
+.hero__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 1. Black man with orange beanie (Top-Left, tall) */
+.hero__avatar--black-men {
+  left: 0;
+  top: 0;
+  width: 175px;
+  height: 380px;
+}
+
+/* 2. Asian girl smiling (Top-Center, square) */
+.hero__avatar--chinese-girl {
+  left: 190px;
+  top: 0;
+  width: 190px;
+  height: 185px;
+}
+
+/* 3. Redhead girl with glasses (Bottom-Left, square) */
+.hero__avatar--glasses-girl {
+  left: 0;
+  top: 395px;
+  width: 175px;
+  height: 180px;
+}
+
+/* 4. Man with glasses smiling (Bottom-Center, tall) */
+.hero__avatar--glasses-boy {
+  left: 190px;
+  top: 200px;
+  width: 190px;
+  height: 375px;
+}
+
+/* 5. Woman with sunglasses and hair towel (Right, tall) */
+.hero__avatar--sunglasses {
+  left: 395px;
+  top: 90px;
+  width: 175px;
+  height: 375px;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1280px) {
+  .main-header,
+  .hero {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .hero__visual {
+    width: 480px;
+    height: 500px;
+    transform: scale(0.85);
+    transform-origin: top right;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-header,
+  .hero {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .hero__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .categories {
+    justify-content: center;
+  }
+
+  .hero__visual {
+    margin-top: 40px;
+    transform: scale(0.9);
+    transform-origin: center top;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .main-menu ul {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 20px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .hero__button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .categories {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .hero__visual {
+    width: 100%;
+    max-width: 360px;
+    height: 380px;
+    transform: scale(0.62);
+    transform-origin: center top;
+  }
 }
